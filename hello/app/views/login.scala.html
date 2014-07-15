@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+@(form: Form[Application.Login]
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>LoginPage</title>
+</head>
+<body>
+<header><a href="@routes.Application.login" id="logo"></a></header>
+
+@helper.form(routes.Application.authenticate) {
+   <h1>Sign in</h1>
+
+   <p>
+       <input type="email" name="email" placeholder="Email" value="@form("email").value">
+   </p>
+   <p>
+       <input type="password" name="password" placeholder="Password">
+   </p>
+   <p>
+       <button type="submit">Login</button>
+   </p>
+}
+</body>
+</html>
